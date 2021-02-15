@@ -1,7 +1,7 @@
 name: Forecast
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '0 16 * * *'
   workflow_dispatch:
 jobs:
   daily:
@@ -20,6 +20,6 @@ jobs:
           password: ${{secrets.PASSWORD}}
           subject: Today Forecast
           body: file://weather.html
-          from: github.com/ronniesong0809/forecast-email 
+          from: Ronnie
           to: ronniesong0809@gmail.com
           content_type: text/html
