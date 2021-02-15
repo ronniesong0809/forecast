@@ -10,3 +10,15 @@ jobs:
       - uses: actions/checkout@v2
       - name: Fetch weather
         run: bash ./wttr.sh
+
+      - name: Send email
+        uses: dawidd6/action-send-mail@v2.4.0
+        with:
+          server_address: smtp-relay.gmail.com
+          port: 465
+          username: ${{secrets.USERNAME}}
+          password: ${{secrets.PASSWORD}}
+          subject: Today Forecast
+          body: file://weather.html
+          to: ronniesong0809@gmail.com
+          content_type: text/html
