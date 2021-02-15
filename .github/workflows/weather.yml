@@ -20,5 +20,6 @@ jobs:
           password: ${{secrets.PASSWORD}}
           subject: Today Forecast
           body: file://weather.html
+          from: github.com/ronniesong0809/forecast-email 
           to: ronniesong0809@gmail.com
           content_type: text/html
